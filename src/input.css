@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* 1. Load Font */
+@font-face {
+  font-family: 'NamaFontAsli';
+  /* PERHATIKAN INI: Gunakan titik dua (..) untuk mundur dari folder css ke root assets */
+  src: url('../fonts/baloo.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. Konfigurasi Tailwind v4 */
+@theme {
+  /* Mendaftarkan class 'font-kopi' */
+  --font-kopi: "NamaFontAsli", sans-serif;
+
+  /* Mendaftarkan warna */
+  --color-primary: #DF0000;
+}

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Melek Cafe: Kopi jalanan premium di Cikarang Selatan. Spesialis Kopi Susu Gula Aren dan minuman segar. Harga terjangkau, rasa kafe bintang lima.">
+    <meta name="keywords"
+        content="kopi cikarang, kopi susu gula aren, melek cafe, kopi jalanan, booth kopi bekasi, kopi murah enak">
+    <title>Melek Cafe | Kopi Jalanan Premium Cikarang</title>
+
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <link rel="icon" type="image/png" href="./assets/img/logo.png">
+</head>
+
+<body class="scroll-smooth">
+    <nav class="fixed top-4 left-0 right-0 z-50 px-4 w-full">
+        <div
+            class="mx-auto max-w-5xl bg-white border-2 border-[#DF0000] rounded-[2rem] px-4 py-2 sm:px-6 sm:py-3 shadow-lg transition-all duration-300 relative">
+
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="block hover:opacity-80 transition-opacity duration-300">
+                        <img src="./assets/img/logo.png" alt="Logo Melek Cafe Cikarang"
+                            class="w-24 md:h-10 object-contain">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home"
+                        class="text-gray-700 font-bold hover:text-[#DF0000] transition-colors text-sm uppercase tracking-wide">Home</a>
+                    <a href="#about"
+                        class="text-gray-700 font-bold hover:text-[#DF0000] transition-colors text-sm uppercase tracking-wide">Tentang
+                        Kami</a>
+                    <a href="#menu"
+                        class="text-gray-700 font-bold hover:text-[#DF0000] transition-colors text-sm uppercase tracking-wide">Menu</a>
+                    <a href="#booth"
+                        class="text-gray-700 font-bold hover:text-[#DF0000] transition-colors text-sm uppercase tracking-wide">Lokasi</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/082125000978"
+                        class="inline-flex items-center justify-center bg-[#DF0000] text-white font-bold text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-2.5 rounded-full hover:bg-red-700 transition-all duration-300">
+                        CONTACT
+                    </a>
+
+                    <button id="hamburger-btn" class="md:hidden text-[#DF0000] focus:outline-none p-1"
+                        aria-label="Buka Menu">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu"
+                class="hidden flex-col items-center gap-4 mt-4 pb-2 border-t border-gray-100 pt-4 md:hidden">
+                <a href="#home" class="text-gray-800 font-bold text-lg hover:text-[#DF0000]">Home</a>
+                <a href="#about" class="text-gray-800 font-bold text-lg hover:text-[#DF0000]">Tentang Kami</a>
+                <a href="#menu" class="text-gray-800 font-bold text-lg hover:text-[#DF0000]">Menu</a>
+                <a href="#booth" class="text-gray-800 font-bold text-lg hover:text-[#DF0000]">Lokasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home"
+        class="min-h-screen w-full flex flex-col items-center justify-center overflow-hidden relative bg-white px-4 pt-0 lg:pt-24 pb-10">
+
+        <div class="absolute top-0 right-0 w-[5vw] md:w-[25vw] max-w-[200px] opacity-90 pointer-events-none">
+
+
+            <svg width="901" height="1012" viewBox="0 0 901 1012" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M509.286 14.6223C599.493 43.5436 634.195 151.473 707.338 211.689C765.704 259.74 872.67 259.853 894.94 332.115C918.641 409.019 831.618 476.545 813.098 554.86C799.866 610.814 830.64 674.075 802.251 724.07C773.832 774.116 719.81 816.078 662.423 820.205C604.742 824.352 561.973 721.285 509.286 745.135C394.793 796.964 371.36 984.726 247.84 1007.88C153.258 1025.6 47.7712 929.178 21.5847 836.545C-5.9342 739.199 122.827 655.978 119.776 554.86C116.567 448.52 -16.9287 367.432 4.28229 263.181C24.5782 163.427 129.996 100.801 221.302 55.8607C309.822 12.2918 415.339 -15.4982 509.286 14.6223Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M499.939 88.719C576.569 113.279 606.048 204.934 668.183 256.07C717.765 296.874 808.633 296.971 827.551 358.336C847.685 423.644 773.759 480.987 758.026 547.492C746.786 595.009 772.928 648.73 748.811 691.186C724.67 733.686 678.779 769.32 630.028 772.825C581.028 776.347 544.696 688.822 499.939 709.075C402.677 753.088 382.77 912.537 277.84 932.197C197.493 947.252 107.882 865.366 85.6371 786.701C62.2598 704.034 171.642 633.362 169.05 547.492C166.324 457.187 52.92 388.328 70.9387 299.797C88.18 215.085 177.732 161.903 255.297 123.739C330.495 86.7399 420.131 63.1405 499.939 88.719Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M489.756 177.428C549.995 196.737 573.168 268.797 622.012 309.001C660.987 341.082 732.417 341.158 747.289 389.404C763.115 440.75 705.003 485.835 692.636 538.122C683.8 575.48 704.35 617.717 685.392 651.096C666.415 684.51 630.34 712.527 592.018 715.282C553.5 718.051 524.94 649.237 489.756 665.161C413.3 699.765 397.651 825.126 315.167 840.583C252.007 852.419 181.565 788.039 164.078 726.192C145.701 661.198 231.686 605.634 229.648 538.122C227.505 467.123 138.36 412.984 152.524 343.38C166.077 276.779 236.473 234.966 297.446 204.961C356.558 175.872 427.02 157.317 489.756 177.428Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M481.892 243.737C530.062 259.173 548.593 316.779 587.652 348.918C618.819 374.564 675.939 374.624 687.832 413.193C700.488 454.239 654.018 490.279 644.128 532.078C637.062 561.943 653.495 595.707 638.335 622.391C623.16 649.102 594.312 671.498 563.667 673.701C532.865 675.915 510.027 620.904 481.892 633.634C420.752 661.296 408.239 761.511 342.279 773.867C291.772 783.329 235.442 731.863 221.458 682.422C206.763 630.466 275.522 586.048 273.892 532.078C272.179 475.321 200.892 432.043 212.218 376.401C223.057 323.159 279.35 289.733 328.108 265.747C375.378 242.493 431.724 227.661 481.892 243.737Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M474.248 303.197C511.457 315.104 525.771 359.539 555.942 384.331C580.017 404.113 624.139 404.16 633.325 433.911C643.101 465.573 607.205 493.374 599.566 525.616C594.108 548.653 606.802 574.698 595.092 595.281C583.369 615.886 561.086 633.162 537.415 634.86C513.622 636.568 495.981 594.135 474.248 603.954C427.021 625.292 417.355 702.595 366.405 712.126C327.391 719.425 283.88 679.726 273.078 641.588C261.727 601.51 314.839 567.247 313.58 525.616C312.257 481.835 257.192 448.451 265.941 405.53C274.313 364.461 317.796 338.677 355.459 320.175C391.972 302.238 435.496 290.796 474.248 303.197Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+
+            </svg>
+
+
+
+        </div>
+
+
+        <div
+            class="absolute bottom-0 left-0 z-0 w-[5vw] md:w-[25vw] max-w-[200px] opacity-90 pointer-events-none rotate-180">
+
+
+            <svg width="901" height="1012" viewBox="0 0 901 1012" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M509.286 14.6223C599.493 43.5436 634.195 151.473 707.338 211.689C765.704 259.74 872.67 259.853 894.94 332.115C918.641 409.019 831.618 476.545 813.098 554.86C799.866 610.814 830.64 674.075 802.251 724.07C773.832 774.116 719.81 816.078 662.423 820.205C604.742 824.352 561.973 721.285 509.286 745.135C394.793 796.964 371.36 984.726 247.84 1007.88C153.258 1025.6 47.7712 929.178 21.5847 836.545C-5.9342 739.199 122.827 655.978 119.776 554.86C116.567 448.52 -16.9287 367.432 4.28229 263.181C24.5782 163.427 129.996 100.801 221.302 55.8607C309.822 12.2918 415.339 -15.4982 509.286 14.6223Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M499.939 88.719C576.569 113.279 606.048 204.934 668.183 256.07C717.765 296.874 808.633 296.971 827.551 358.336C847.685 423.644 773.759 480.987 758.026 547.492C746.786 595.009 772.928 648.73 748.811 691.186C724.67 733.686 678.779 769.32 630.028 772.825C581.028 776.347 544.696 688.822 499.939 709.075C402.677 753.088 382.77 912.537 277.84 932.197C197.493 947.252 107.882 865.366 85.6371 786.701C62.2598 704.034 171.642 633.362 169.05 547.492C166.324 457.187 52.92 388.328 70.9387 299.797C88.18 215.085 177.732 161.903 255.297 123.739C330.495 86.7399 420.131 63.1405 499.939 88.719Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M489.756 177.428C549.995 196.737 573.168 268.797 622.012 309.001C660.987 341.082 732.417 341.158 747.289 389.404C763.115 440.75 705.003 485.835 692.636 538.122C683.8 575.48 704.35 617.717 685.392 651.096C666.415 684.51 630.34 712.527 592.018 715.282C553.5 718.051 524.94 649.237 489.756 665.161C413.3 699.765 397.651 825.126 315.167 840.583C252.007 852.419 181.565 788.039 164.078 726.192C145.701 661.198 231.686 605.634 229.648 538.122C227.505 467.123 138.36 412.984 152.524 343.38C166.077 276.779 236.473 234.966 297.446 204.961C356.558 175.872 427.02 157.317 489.756 177.428Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M474.248 303.197C511.457 315.104 525.771 359.539 555.942 384.331C580.017 404.113 624.139 404.16 633.325 433.911C643.101 465.573 607.205 493.374 599.566 525.616C594.108 548.653 606.802 574.698 595.092 595.281C583.369 615.886 561.086 633.162 537.415 634.86C513.622 636.568 495.981 594.135 474.248 603.954C427.021 625.292 417.355 702.595 366.405 712.126C327.391 719.425 283.88 679.726 273.078 641.588C261.727 601.51 314.839 567.247 313.58 525.616C312.257 481.835 257.192 448.451 265.941 405.53C274.313 364.461 317.796 338.677 355.459 320.175C391.972 302.238 435.496 290.796 474.248 303.197Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M481.892 243.737C530.062 259.173 548.593 316.779 587.652 348.918C618.819 374.564 675.939 374.624 687.832 413.193C700.488 454.239 654.018 490.279 644.128 532.078C637.062 561.943 653.495 595.707 638.335 622.391C623.16 649.102 594.312 671.498 563.667 673.701C532.865 675.915 510.027 620.904 481.892 633.634C420.752 661.296 408.239 761.511 342.279 773.867C291.772 783.329 235.442 731.863 221.458 682.422C206.763 630.466 275.522 586.048 273.892 532.078C272.179 475.321 200.892 432.043 212.218 376.401C223.057 323.159 279.35 289.733 328.108 265.747C375.378 242.493 431.724 227.661 481.892 243.737Z"
+                    stroke="#DF0000" stroke-opacity="0.5" stroke-width="4" />
+
+
+            </svg>
+
+
+
+        </div>
+
+
+
+
+        <div class="relative z-10 flex flex-col items-center text-center px-4 w-full">
+            <h1
+                class="font-kopi font-black text-[#DF0000] flex items-center justify-center tracking-tight leading-none select-none transition-all duration-300">
+                <span class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl relative z-0">Melek</span>
+                <img src="./assets/img/homecup.png" alt="Kopi Susu Gula Aren Melek Cafe" class="
+                        hidden lg:block
+                        relative z-10 
+                        -mx-14 
+                        w-56 h-56 
+                        object-contain drop-shadow-2xl hover:scale-110 hover:rotate-6 transition-transform duration-300
+                    ">
+                <span class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl relative z-0">Cafe</span>
+            </h1>
+
+            <img src="./assets/img/homecup.png" alt="Kopi Jalanan Melek Cafe" class="
+                    block lg:hidden
+                    mt-6 w-48 h-48 sm:w-56 sm:h-56
+                    object-contain drop-shadow-2xl
+                    animate-bounce-slow
+                ">
+
+            <p
+                class="mt-8 text-base sm:text-lg md:text-2xl text-gray-700 font-medium max-w-xs sm:max-w-xl md:max-w-2xl leading-relaxed">
+                Teman setia di setiap perjalananmu. Kopi jalanan premium yang bikin melek seharian.
+            </p>
+
+            <div class="mt-8 sm:mt-12">
+                <a href="#booth"
+                    class="inline-block bg-[#DF0000] text-white font-bold px-8 py-4 rounded-full text-base sm:text-xl shadow-lg hover:bg-red-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    CEK BOOTH TERDEKAT
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-white lg:grid lg:h-screen lg:place-content-center">
+        <div
+            class="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32">
+            <div class="max-w-prose text-left">
+                <h1 class="font-kopi text-4xl font-black text-gray-900 sm:text-5xl leading-tight">
+                    Bangun Semangatmu,
+                    <strong class="text-[#DF0000]"> Lawan Kantukmu </strong>
+                </h1>
+
+                <p class="mt-6 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
+                    Bukan sekadar kopi pinggir jalan. <strong>Melek Cafe</strong> hadir di setiap sudut Cikarang,
+                    menyajikan biji kopi pilihan untuk para pejuang jalanan. Kami percaya bahwa kopi enak tidak harus
+                    mahal. Dapatkan energi instan dengan cita rasa kafe bintang lima, harga kaki lima.
+                </p>
+
+                <div class="mt-6 flex gap-4 sm:mt-8">
+                    <a class="inline-block rounded-full border border-[#DF0000] bg-[#DF0000] px-6 py-3 font-bold text-white shadow-sm transition-colors hover:bg-red-700"
+                        href="#menu">
+                        Lihat Menu Kami
+                    </a>
+                </div>
+            </div>
+
+            <img src="./assets/img/about.png" alt="Suasana Melek Cafe Booth"
+                class="mt-8 lg:mt-0 lg:ml-20 mx-auto w-full max-w-auto block rounded-2xl rotate-3 hover:rotate-0 transition-transform duration-500" />
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 px-4 bg-white w-full relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="font-kopi text-5xl md:text-6xl font-black text-[#DF0000] tracking-tighter mb-2">
+                    Menu Pilihan
+                </h2>
+                <p class="text-gray-600 hidden sm:block text-lg">Racikan terbaik untuk menemani harimu</p>
+                <p class="text-gray-600 sm:hidden text-lg">Geser untuk melihat kesegaran lainnya &rarr;</p>
+            </div>
+
+            <div
+                class="flex overflow-x-auto snap-x snap-mandatory gap-0 pb-8 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-12 md:overflow-visible md:pb-0 scrollbar-hide">
+
+                <div
+                    class="min-w-[80vw] sm:min-w-[45vw] md:min-w-0 snap-center flex flex-col items-center text-center group cursor-pointer px-4">
+                    <div
+                        class="relative w-48 h-48 md:w-56 md:h-56 flex items-center hover:rotate-6 justify-center transition-transform duration-300 group-hover:scale-110">
+                        <img src="./assets/img/homecup.png" alt="Es Kopi Susu Gula Aren Melek Cafe"
+                            class="w-full h-full object-contain drop-shadow-2xl">
+                    </div>
+                    <div class="mt-6">
+                        <h3
+                            class="font-bold text-2xl text-gray-800 mb-2 font-kopi tracking-wide group-hover:text-[#DF0000] transition-colors">
+                            Melek Coffee Latte
+                        </h3>
+                        <p class="text-sm md:text-base text-gray-500 mb-3 max-w-[250px] mx-auto leading-relaxed">
+                            Signature kopi susu creamy dengan gula aren asli. Manis pas, kopi nendang.
+                        </p>
+                        <span class="block text-[#DF0000] font-bold text-3xl">18K</span>
+                    </div>
+                </div>
+
+                <div
+                    class="min-w-[80vw] sm:min-w-[45vw] md:min-w-0 snap-center flex flex-col items-center text-center group cursor-pointer px-4">
+                    <div
+                        class="relative w-48 h-48 md:w-56 md:h-56 flex items-center hover:rotate-6 justify-center transition-transform duration-300 group-hover:scale-110">
+                        <img src="./assets/img/homecup.png" alt="Es Americano Segar"
+                            class="w-full h-full object-contain drop-shadow-2xl">
+                    </div>
+                    <div class="mt-6">
+                        <h3
+                            class="font-bold text-2xl text-gray-800 mb-2 font-kopi tracking-wide group-hover:text-[#DF0000] transition-colors">
+                            Americano
+                        </h3>
+                        <p class="text-sm md:text-base text-gray-500 mb-3 max-w-[250px] mx-auto leading-relaxed">
+                            Hitam pekat, tanpa gula. Booster energi instan bikin melek seharian.
+                        </p>
+                        <span class="block text-[#DF0000] font-bold text-3xl">15K</span>
+                    </div>
+                </div>
+
+                <div
+                    class="min-w-[80vw] sm:min-w-[45vw] md:min-w-0 snap-center flex flex-col items-center text-center group cursor-pointer px-4">
+                    <div
+                        class="relative w-48 h-48 md:w-56 md:h-56 flex items-center hover:rotate-6 justify-center transition-transform duration-300 group-hover:scale-110">
+                        <img src="./assets/img/homecup.png" alt="Kopi Krim Keju"
+                            class="w-full h-full object-contain drop-shadow-2xl">
+                        <div
+                            class="absolute top-0 right-4 bg-yellow-400 text-yellow-900 text-[10px] font-bold px-2 py-1 rounded-full shadow-md">
+                            MUST TRY
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h3
+                            class="font-bold text-2xl text-gray-800 mb-2 font-kopi tracking-wide group-hover:text-[#DF0000] transition-colors">
+                            Coffee Cheese Cream
+                        </h3>
+                        <p class="text-sm md:text-base text-gray-500 mb-3 max-w-[250px] mx-auto leading-relaxed">
+                            Perpaduan kopi gurih dengan topping krim keju melimpah. Unik dan nagih.
+                        </p>
+                        <span class="block text-[#DF0000] font-bold text-3xl">22K</span>
+                    </div>
+                </div>
+
+                <div
+                    class="min-w-[80vw] sm:min-w-[45vw] md:min-w-0 snap-center flex flex-col items-center text-center group cursor-pointer px-4">
+                    <div
+                        class="relative w-48 h-48 md:w-56 md:h-56 flex items-center hover:rotate-6 justify-center transition-transform duration-300 group-hover:scale-110">
+                        <img src="./assets/img/homecup.png" alt="Minuman Pink Lemonade Segar"
+                            class="w-full h-full object-contain drop-shadow-2xl">
+                    </div>
+                    <div class="mt-6">
+                        <h3
+                            class="font-bold text-2xl text-gray-800 mb-2 font-kopi tracking-wide group-hover:text-[#DF0000] transition-colors">
+                            Pink Lemonade
+                        </h3>
+                        <p class="text-sm md:text-base text-gray-500 mb-3 max-w-[250px] mx-auto leading-relaxed">
+                            Pilihan non-kopi. Segarnya lemon berpadu dengan sirup stroberi manis.
+                        </p>
+                        <span class="block text-[#DF0000] font-bold text-3xl">18K</span>
+                    </div>
+                </div>
+
+                <div
+                    class="min-w-[80vw] sm:min-w-[45vw] md:min-w-0 snap-center flex flex-col items-center text-center group cursor-pointer px-4">
+                    <div
+                        class="relative w-48 h-48 md:w-56 md:h-56 flex items-center hover:rotate-6 justify-center transition-transform duration-300 group-hover:scale-110">
+                        <img src="./assets/img/homecup.png" alt="Es Coklat Malt"
+                            class="w-full h-full object-contain drop-shadow-2xl">
+                    </div>
+                    <div class="mt-6">
+                        <h3
+                            class="font-bold text-2xl text-gray-800 mb-2 font-kopi tracking-wide group-hover:text-[#DF0000] transition-colors">
+                            Choco Malt
+                        </h3>
+                        <p class="text-sm md:text-base text-gray-500 mb-3 max-w-[250px] mx-auto leading-relaxed">
+                            Coklat malt yang crunchy dan milky abis. Favorit semua umur.
+                        </p>
+                        <span class="block text-[#DF0000] font-bold text-3xl">20K</span>
+                    </div>
+                </div>
+
+                <div
+                    class="min-w-[80vw] sm:min-w-[45vw] md:min-w-0 snap-center flex flex-col items-center text-center group cursor-pointer px-4">
+                    <div
+                        class="relative w-48 h-48 md:w-56 md:h-56 flex items-center hover:rotate-6 justify-center transition-transform duration-300 group-hover:scale-110">
+                        <img src="./assets/img/homecup.png" alt="Es Coklat Premium"
+                            class="w-full h-full object-contain drop-shadow-2xl">
+                        <div
+                            class="absolute top-0 right-4 bg-[#DF0000] text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-md">
+                            FAVORITE
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h3
+                            class="font-bold text-2xl text-gray-800 mb-2 font-kopi tracking-wide group-hover:text-[#DF0000] transition-colors">
+                            Choco Royal
+                        </h3>
+                        <p class="text-sm md:text-base text-gray-500 mb-3 max-w-[250px] mx-auto leading-relaxed">
+                            Coklat premium kental dengan rasa mewah. Mood booster terbaik.
+                        </p>
+                        <span class="block text-[#DF0000] font-bold text-3xl">22K</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:hidden flex justify-center mt-8 gap-2">
+                <div class="w-2 h-2 rounded-full bg-[#DF0000]"></div>
+                <div class="w-2 h-2 rounded-full bg-red-200"></div>
+                <div class="w-2 h-2 rounded-full bg-red-200"></div>
+                <div class="w-2 h-2 rounded-full bg-red-200"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booth" class="py-20 px-4 bg-white w-full relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-kopi text-5xl md:text-6xl text-[#DF0000] tracking-tighter font-black mb-2">
+                    Lokasi Booth
+                </h2>
+                <p class="text-gray-600 text-lg">Temukan kesegaran Melek Cafe di titik terdekatmu.</p>
+            </div>
+
+            <div class="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-100 z-0">
+                <div id="map" class="w-full h-full"></div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <div class="inline-block bg-gray-50 px-6 py-4 rounded-xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-[#DF0000] text-xl mb-1">Melek Cafe - Cikarang Pusat</h3>
+                    <p class="text-gray-600 max-w-md mx-auto">
+                        Jl. Cijingga I, Kp. Cijingga, Desa Serang,<br>
+                        Kecamatan Cikarang Selatan, Kab. Bekasi
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="flex justify-center">
+                <img src="./assets/img/logo.png"
+                    class="w-40 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                    alt="Melek Cafe Footer Logo">
+            </div>
+
+            <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 text-sm">
+                <strong>Melek Cafe</strong> adalah pelopor kopi booth modern di Cikarang Selatan. Menyajikan kopi
+                berkualitas dengan harga bersahabat untuk menemani setiap aktivitasmu.
+            </p>
+
+            <ul
+                class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider">
+                <li><a class="text-gray-700 transition hover:text-[#DF0000]" href="#home"> Home </a></li>
+                <li><a class="text-gray-700 transition hover:text-[#DF0000]" href="#about"> About </a></li>
+                <li><a class="text-gray-700 transition hover:text-[#DF0000]" href="#menu"> Menu </a></li>
+                <li><a class="text-gray-700 transition hover:text-[#DF0000]" href="#booth"> Lokasi </a></li>
+            </ul>
+
+            <div class="mt-12 text-center text-xs text-gray-400">
+                &copy; 2024 Melek Cafe. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+
+    <script>
+        const btn = document.getElementById('hamburger-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+    </script>
+
+    <script>
+        var map = L.map('map').setView([-6.356041, 107.127418], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        var locations = [
+            {
+                name: "Melek Cafe - Cijingga",
+                lat: -6.356041,
+                lng: 107.127418,
+                address: "Jl. Cijingga I, Cikarang Selatan",
+                image: "./assets/img/homecup.png",
+                gmapsUrl: "https://www.google.com/maps/dir/?api=1&destination=-6.356041,107.127418"
+            }
+        ];
+
+        var melekIcon = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        locations.forEach(function (loc) {
+            var popupContent = `
+                <div class="text-center min-w-[200px]">
+                    <h3 class="font-bold text-[#DF0000] text-lg mb-2 font-sans">${loc.name}</h3>
+                    <div class="w-full h-32 bg-gray-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center">
+                        <img src="${loc.image}" class="w-full h-full object-cover" alt="${loc.name}">
+                    </div>
+                    <p class="text-xs text-gray-500 mb-3 font-sans">${loc.address}</p>
+                    <a href="${loc.gmapsUrl}" target="_blank" class="block w-full bg-[#DF0000] text-white text-sm font-bold py-2 rounded-lg hover:bg-red-700 transition font-sans text-center no-underline">
+                        Buka Google Maps 📍
+                    </a>
+                </div>
+            `;
+            L.marker([loc.lat, loc.lng], { icon: melekIcon })
+                .addTo(map)
+                .bindPopup(popupContent);
+        });
+    </script>
+</body>
+
+</html>
